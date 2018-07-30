@@ -28,4 +28,4 @@ app.get('/', function (req, res, next) {
 });
 
 app.listen(port, host);
-console.log('Treadmill Helper started on: ' host + ':' + port);
+console.log('Treadmill Helper started on: ' + host + ':' + port);
