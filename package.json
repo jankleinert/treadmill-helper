@@ -1,0 +1,15 @@
+{
+  "name": "treadmill-helper",
+  "version": "1.0.0",
+  "description": "Converts between imperial and metric",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Jan Kleinert",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
