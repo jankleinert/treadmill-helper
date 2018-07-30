@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8080;
+const host = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+const port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 app.use(function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -26,5 +27,5 @@ app.get('/', function (req, res, next) {
 	}
 });
 
-app.listen(port);
-console.log('Treadmill Helper started on port: ' + port);
+app.listen(port, host);
+console.log('Treadmill Helper started on: ' host + ':' + port);
