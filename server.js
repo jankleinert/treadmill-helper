@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3001;
 
 app.use(function(req, res, next) {
-	res.header("Access-Control-Allow-Origin", "*");
-  	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	res.header('Access-Control-Allow-Origin', '*');
+  	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   	next();
 });
 
 app.get('/', function (req, res, next) {
-	console.log('get request');
 	var result;
 
 	if (req.query.mph !== undefined) {
@@ -22,10 +22,9 @@ app.get('/', function (req, res, next) {
 				  result: result});
 	} else {
 		res.send({success: false,
-				  result: "Invalid request."});
+				  result: 'Invalid request.'});
 	}
-
-	console.log(req.query);	
 });
 
-app.listen(3001, () => console.log('Example app listening on port 3001!'))
+app.listen(port);
+console.log('Treadmill Helper started on port: ' + port);
