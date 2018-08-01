@@ -9,7 +9,7 @@ app.use(function(req, res, next) {
   	next();
 });
 
-app.get('/', function (req, res, next) {
+app.get('/convert/', function (req, res, next) {
 	var result;
 
 	if (req.query.mph !== undefined) {
